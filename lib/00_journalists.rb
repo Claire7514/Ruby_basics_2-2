@@ -19,7 +19,7 @@ puts "Combien y a-t-il de underscore dans tous les handles confondus ?"
 puts "Il y a #{source.join.count"_"} underscore dans les pseudos"
 puts ""
 puts "Trie la liste de handle par ordre alphabétique."
-print source.sort
+puts source.sort_by {|word| word.downcase}
 puts ""
 puts "Quels sont les 50 handles les plus courts de ce array ?"
 print source.min(50)
@@ -27,3 +27,9 @@ puts ""
 puts ""
 puts "Quelle est la position dans l'array de @epenser ?"
 puts "La position de la personne @epenser est #{source.index("@epenser")}"
+
+def _8_50short
+  sort_b_length = source.sort_by {|x| x.length}
+  print sort_b_length[0..50]
+  puts""
+end
