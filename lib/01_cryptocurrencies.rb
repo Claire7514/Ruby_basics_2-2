@@ -12,8 +12,9 @@ my_hash.transform_values! {|v| v.delete"$"}
 my_hash.transform_values! {|v| v.to_f}
 
 
+
 puts "Voici la devise la plus importante :#{my_hash.key(my_hash.values.max)} avec \$#{my_hash.values.sort.last}"
 puts "Voici la devise la moin importante :#{my_hash.key(my_hash.values.min)} avec \$#{my_hash.values.sort.first}"
-puts " Le nombre de crypto contenant le mot coin : #{name.count{|name| name.downcase.match"coin"}}"
-puts "Les devises, dont le cours est inférieur à 6000 : #{combien_coin(my_hash)}"
+puts " Le nombre de crypto contenant le mot coin : #{coins.count{|coins| coins.downcase.match"coin"}}"
+puts "Les devises, dont le cours est inférieur à 6000 : #{my_hash.keep_if { |_, v| v < 6000 }}"
 puts "La devise la plus chère parmi celles dont le cours est inférieur à 6000 :#{my_hash.select {|_, v| v < 6000 }.max_by(1) { |h| h[1] }}"
