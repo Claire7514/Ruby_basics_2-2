@@ -27,9 +27,3 @@ puts ""
 puts ""
 puts "Quelle est la position dans l'array de @epenser ?"
 puts "La position de la personne @epenser est #{source.index("@epenser")}"
-
-def _8_50short
-  sort_b_length = source.sort_by {|x| x.length}
-  print sort_b_length[0..50]
-  puts""
-end
